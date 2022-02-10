@@ -1,6 +1,3 @@
-//
-//
-//
 #include "functions.h"
 
 // Returns true if given card number is valid
@@ -31,7 +28,6 @@ bool checkInput(string &cardNum, int size) {
     //fails the error checking if a character is entered that is not a digit
     for (int i; i <= size -1; i++) {
         if (!isdigit(cardNum[i])) {
-            cout << "Not a digit" << endl;
             return false;
         }
     }

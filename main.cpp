@@ -2,8 +2,8 @@
 //Author:       Kristy Wheeler
 //Project:      LuhnProject
 //Date:         2/8/22
-//Description:  This program improves upon the Luhn function by including input
-//              validation...FIXME
+//Description:  This program improves upon the Luhn algorithm by including input
+//              validation and more robust output
 //Sources:      https://www.geeksforgeeks.org/luhn-algorithm/
 //**************************************************************************
 
@@ -14,10 +14,10 @@ int main()
 {
     //prompt user and collect card input
     string cardNum;
+    int size;
+
     cout << "Please enter a card number without spaces: ";
     cin >> cardNum;
-
-    int size;
     size = cardNum.length();
     //invoke function to check user input
     while (!(checkInput(cardNum, size))) {
