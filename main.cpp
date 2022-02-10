@@ -27,6 +27,7 @@ int main() {
          size = cardNum.length();
     }
 
+    //invokes function to check against Luhn algorithm and displays result to console
     if (checkLuhn(cardNum)) {
         cout << "This is a valid card number";
     }
