@@ -24,16 +24,14 @@ bool checkLuhn(const string& cardNum)
     return (nSum % 10 == 0);
 }
 // returns true if input is valid
-bool checkInputDigits(string &cardNum, int size) {
-    //fails the error checking if a character is entered that is not a digit
+bool checkInput(string &cardNum, int size) {
+    //check that all values in string are digits
     for (int i; i <= size - 1; i++) {
         if (!isdigit(cardNum[i])) {
             return false;
         }
     }
-    return true;
-}
-bool checkInputLength (string &cardNum, int size) {
+    //check for 15 or 16 digit length
     if (size < 15 || size > 16) {
         return false;
     }
