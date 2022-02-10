@@ -1,9 +1,6 @@
-//
-//
-//
 #include "functions.h"
 
-// Returns true if given card number is valid
+// Returns true if given card number is valid per Luhn algorithm
 bool checkLuhn(const string& cardNum)
 {
     int numDigits = cardNum.length();
@@ -27,16 +24,21 @@ bool checkLuhn(const string& cardNum)
     return (nSum % 10 == 0);
 }
 // returns true if input is valid
-bool checkInput(string &cardNum, int size) {
+bool checkInputDigits(string &cardNum, int size) {
     //fails the error checking if a character is entered that is not a digit
-    for (int i; i <= size -1; i++) {
+    for (int i; i <= size - 1; i++) {
         if (!isdigit(cardNum[i])) {
-            cout << "Not a digit" << endl;
             return false;
         }
     }
+    return true;
+}
+bool checkInputLength (string &cardNum, int size) {
     if (size < 15 || size > 16) {
         return false;
     }
     return true;
 }
+//void testDigits() {
+//    cout << checkInput()
+//}

@@ -2,7 +2,7 @@
 //Author:       Kristy Wheeler
 //Project:      LuhnProject
 //Date:         2/8/22
-//Description:  This program improves upon the Luhn function by including input
+//Description:  This program improves upon the Luhn algorithm by including input
 //              validation...FIXME
 //Sources:      https://www.geeksforgeeks.org/luhn-algorithm/
 //**************************************************************************
@@ -14,20 +14,24 @@ int main()
 {
     //prompt user and collect card input
     string cardNum;
-    cout << "Please enter a card number without spaces: ";
+    cout << "Please enter a 15 or 16 digit card number without spaces: ";
     cin >> cardNum;
 
     int size;
     size = cardNum.length();
     //invoke function to check user input
-    while (!(checkInput(cardNum, size))) {
-         cout << "Invalid input. Please enter again: ";
+    while (!(checkInputDigits(cardNum, size))) {
+         cout << "Your input contains non-numeric digits. Please enter again: ";
          cin >> cardNum;
          size = cardNum.length();
     }
-
+    while (!(checkInputLength(cardNum, size))) {
+        cout << "Invalid input. Please enter a 15 or 16 digit card number: ";
+        cin >> cardNum;
+        size = cardNum.length();
+    }
     if (checkLuhn(cardNum)) {
-        cout << "This is a valid card";
+        cout << "This is a valid card number";
     }
     else
         cout << "This is not a valid card number.";
