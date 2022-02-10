@@ -9,6 +9,7 @@ using namespace std;
 #define UNTITLED1_FUNCTIONS_H
 
 bool checkLuhn(const string& cardNum);
+bool checkInput(string &cardNum, int size);
 
 
 #endif //UNTITLED1_FUNCTIONS_H

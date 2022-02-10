@@ -9,20 +9,26 @@
 
 #include "functions.h"
 
-
 // Driver code
 int main()
 {
-    //prompt user for card input and
+    //prompt user and collect card input
     string cardNum;
     cout << "Please enter a card number without spaces: ";
     cin >> cardNum;
 
-    //check user input
+    int size;
+    size = cardNum.length();
+    //invoke function to check user input
+    while (!(checkInput(cardNum, size))) {
+         cout << "Invalid input. Please enter again: ";
+         cin >> cardNum;
+         size = cardNum.length();
+    }
 
-
-    if (checkLuhn(cardNum))
+    if (checkLuhn(cardNum)) {
         cout << "This is a valid card";
+    }
     else
         cout << "This is not a valid card number.";
     return 0;

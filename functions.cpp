@@ -1,7 +1,6 @@
 //
 //
 //
-
 #include "functions.h"
 
 // Returns true if given card number is valid
@@ -26,4 +25,18 @@ bool checkLuhn(const string& cardNum)
         isSecond = !isSecond;
     }
     return (nSum % 10 == 0);
+}
+// returns true if input is valid
+bool checkInput(string &cardNum, int size) {
+    //fails the error checking if a character is entered that is not a digit
+    for (int i; i <= size -1; i++) {
+        if (!isdigit(cardNum[i])) {
+            cout << "Not a digit" << endl;
+            return false;
+        }
+    }
+    if (size < 15 || size > 16) {
+        return false;
+    }
+    return true;
 }
